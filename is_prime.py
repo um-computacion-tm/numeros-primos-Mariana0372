@@ -1,18 +1,23 @@
 import unittest
 
-def is_primo(value):
-    # valor % div -> resto
-    if value % 2 != 0:
-        return True
-    else:
+def is_primo(n):
+    if n <= 1:
         return False
-    
-
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
 class TestPrimos(unittest.TestCase):
     def test_1(self):
         result = is_primo(1)
-        self.assertEqual(result, True)
+        self.assertEqual(result, False)
     
     def test_2(self):
         result = is_primo(2)
@@ -33,6 +38,16 @@ class TestPrimos(unittest.TestCase):
     def test_6(self):
         result = is_primo(6)
         self.assertEqual(result, False)
+def correr_pruebas()
+     suite = unittest.TestLoader().loadTestsFromTestCase(TestPrimos)
+     
+     corredor = unittest.TextTestRunner()
 
+     resultado = corredor.run(suite)
+    
+     return resultado
 
-unittest.main()
+if __name__ == '__main__':
+    correr_pruebas()
+    
+ unittest.main()
