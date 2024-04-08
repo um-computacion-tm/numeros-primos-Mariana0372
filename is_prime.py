@@ -38,6 +38,30 @@ class TestPrimos(unittest.TestCase):
     def test_6(self):
         result = is_primo(6)
         self.assertEqual(result, False)
+    def test_7(self):
+        result = is_primo(7)
+        self.assertEqual(result, True)
+
+    def test_11(self):
+        result = is_primo(11)
+        self.assertEqual(result, True)
+
+    def test_13(self):
+        result = is_primo(13)
+        self.assertEqual(result, True)
+
+    def test_17(self):
+        result = is_primo(17)
+        self.assertEqual(result, True)
+
+    def test_19(self):
+        result = is_primo(19)
+        self.assertEqual(result, True)
+
+    def test_23(self):
+        result = is_primo(23)
+        self.assertEqual(result, True)    
+
 def correr_pruebas()
      suite = unittest.TestLoader().loadTestsFromTestCase(TestPrimos)
      
